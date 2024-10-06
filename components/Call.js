@@ -18,7 +18,7 @@ const Call = () => {
   const authenticate = async () => {
     try {
       const result = await new Promise((resolve, reject) => {
-        SendBirdCall.authenticate({ userId }, (res, error) => {
+        SendBirdCall.authenticate({ userId, process.env.NEXT_PUBLIC_USER_TOKEN }, (res, error) => {
           if (error) {
             reject(error);
           } else {
